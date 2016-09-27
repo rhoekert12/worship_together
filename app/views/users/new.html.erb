@@ -1,19 +1,20 @@
 <% if @user.errors.any? %>
-    <p>The form has <%= pluralize(@user.errors.count, 'error') %>.</p>
+    <p class="ALERT-danger">The form has <%= pluralize(@user.errors.count, 'error') %>.</p>
     <ul>
 	<% @user.errors.full_messages.each do |message| %>
 	    <li><%= message %></li>
-        <% end %>
+	<% end %>
     </ul>
 <% end %>
+
 <%= form_for @user do |f| %>
-    <%= f.label :name, 'Username'%>
+    <%= f.label :name, 'Username' %>
     <%= f.text_field :name %>
 
-    <%= f.label :email, 'Email'%>
+    <%= f.label :email %>
     <%= f.text_field :email %>
 
-    <%= f.label :password%>
+    <%= f.label :password %>
     <%= f.password_field :password %>
 
     <%= f.submit 'Submit' %>
