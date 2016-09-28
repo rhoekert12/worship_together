@@ -8,8 +8,6 @@
     <p class="ALERT-<%= type %>"><%= message %></p>
 <% end %>
 
-<%= yield %>
-
   <body>
   <% flash.each do |type, message| %>
       <p class="ALERT-<%= type %>"><%= message%></p>
